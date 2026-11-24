@@ -125,5 +125,35 @@ using namespace std;
             (*p).quantidade = novaQtd;
             cout << "\nQuantidade Atualizada para " << (*p).quantidade << "unidades." << endl;
         }
-
+    void excluirProduto (Produto *estoque, int *qtd){
+        Produto *p;
+        Produto *ultimo;
+        int codigo;
+        int indice;
+        if (*qtd == 0){
+            cout << "\nNenhum produto Cadastrado para excluir." << endl;
+            return;
+        }
+        cout << "Informe o codigo do produto para excluir: ";
+        cin >> codigo;
+        indice + buscarPorCodigo(estoque, *qtd, codigo);
+        if (indice == -1){
+            cout << "Produto com Codigo " << codigo << "nao encontrado";
+            return;
+        }
+        while (p < ultimo){
+            *p = *(p + 1);
+            p++;
+        }
+        (*qtd)--;
+        cout << "\Produto Removido Com Sucesso. Vetor organizado e sem lacunas" << endl;
+    }
+    float calcularValorTotal(const Produto *estoque, int qtd){
+        float total = 0.0;
+        for (int i = 0; i < qtd; i++){
+            const Produto *p = estoque + i;
+            total += (*p)quantidade * (*(p).preco);
+        }
+        return total;
+    }
 #endif
