@@ -108,7 +108,7 @@ using namespace std;
 
         int indice = buscarPorCodigo(estoque, qtd, codigo);
         if (indice == -1) {
-            cout << "\n Produtp com codigo " << codigo << " nao encontrado." << endl;
+            cout << "\n Produtp com codigo " << cod << " nao encontrado." << endl;
             return;
         }
     Produto *p = estoque + indice;
@@ -128,17 +128,17 @@ using namespace std;
     void excluirProduto (Produto *estoque, int *qtd){
         Produto *p;
         Produto *ultimo;
-        int codigo;
+        int cod;
         int indice;
         if (*qtd == 0){
             cout << "\nNenhum produto Cadastrado para excluir." << endl;
             return;
         }
         cout << "Informe o codigo do produto para excluir: ";
-        cin >> codigo;
-        indice + buscarPorCodigo(estoque, *qtd, codigo);
+        cin >> cod;
+        indice + buscarPorCodigo(estoque, *qtd, cod);
         if (indice == -1){
-            cout << "Produto com Codigo " << codigo << "nao encontrado";
+            cout << "Produto com Codigo " << cod << "nao encontrado";
             return;
         }
         while (p < ultimo){
@@ -154,6 +154,6 @@ using namespace std;
             const Produto *p = estoque + i;
             total += (*p)quantidade * (*(p).preco);
         }
-        return total;
+        return total; git
     }
 #endif
