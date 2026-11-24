@@ -154,6 +154,6 @@ using namespace std;
             const Produto *p = estoque + i;
             total += (*p)quantidade * (*(p).preco);
         }
-        return total; git bash
+        return total;
     }
 #endif
