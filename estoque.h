@@ -105,4 +105,25 @@ using namespace std;
         }
         cout << "Informe o codigo do produto: ";
         cin >> cod;
+
+        int indice = buscarPorCodigo(estoque, qtd, codigo);
+        if (indice == -1) {
+            cout << "\n Produtp com codigo " << codigo << " nao encontrado." << endl;
+            return;
+        }
+    Produto *p = estoque + indice;
+    cout << "Produto encontrado : " << (*p).nome << endl;
+    cout << "Quantidade Atual: " << (*p).quantidade << endl;
+
+    int novaQtd;
+        do{
+            cout << "Informe a nova Quantidade em estoque: ";
+            cin >> novaQtd;
+            if (novaQtd < 0){
+                cout << "A QUANTIDADE NAO PODE SER NEGATIVA!" << endl;
+            }while (novaQtd < 0);
+            (*p).quantidade = novaQtd;
+            cout << "\nQuantidade Atualizada para " << (*p).quantidade << "unidades." << endl;
+        }
+
 #endif
