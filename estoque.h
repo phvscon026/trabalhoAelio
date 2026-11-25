@@ -149,7 +149,7 @@ using namespace std;
             p++;
         }
         (*qtd)--;
-        cout << "\Produto Removido Com Sucesso. Vetor organizado e sem lacunas" << endl;
+        cout << "\Produto Removido Com Sucesso." << endl;
     }
     float calcularValorTotal(const Produto *estoque, int qtd){
         float total = 0.0;
