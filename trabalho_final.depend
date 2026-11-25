@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1795568448 source:c:\users\phenr\onedrive\Área de trabalho\trabalho_final-aelio\trabalho_final\main.cpp
+	<iostream>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	"produto.h"
+	"estoque.h"
+
+1795202839 c:\users\phenr\onedrive\Área de trabalho\trabalho_final-aelio\trabalho_final\produto.h
+
+1795568605 c:\users\phenr\onedrive\Área de trabalho\trabalho_final-aelio\trabalho_final\estoque.h
+	<cstring>
+	"produto.h"
+

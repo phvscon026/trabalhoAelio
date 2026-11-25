@@ -31,13 +31,13 @@ int main(){
         cout << "A Capacidade deve ser maior que zero." << endl;
     }
    }while(capacidade <=0);
-    *estoque = (Produto *) malloc(capacidade * sizeof(Produto));
+    estoque = (Produto *) malloc(capacidade * sizeof(Produto));
     if (estoque == NULL){
         cout << "Falha ao alocar memoria." << endl;
         return 1;
     }
     do{
-        exibirMenu(;
+        exibirMenu();
         cout << "Escolha uma opcao: ";
         cin >> opcao;
         switch (opcao){

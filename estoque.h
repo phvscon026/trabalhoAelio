@@ -6,7 +6,7 @@ using namespace std;
 
     int buscarPorCodigo(const Produto *estoque, int n, int cod){
         for (int i = 0; i < n; i++){
-            if (*(estoque + i).codigo == cod){
+            if ((estoque + i)->codigo == cod){
             return i;
             }
         }
@@ -26,11 +26,12 @@ using namespace std;
             cin >> cod;
             if (cod <= 0){
                 cout << "O codigo deve ser maior que zero (0)"<<endl;
-            } else if (buscarPorCodigoE,stoque, *qtd, cod) != -1){
+            } else if (buscarPorCodigo (estoque, *qtd, cod) != -1){
                 cout << "Já existe um produto com esse codigo ->" << cod << endl;
                 cod = -1;
                 }
         }while (cod <= 0);
+        cin.ignore();
         do{
             cout << "Nome do Produto: ";
             cin.getline(name, 100);
@@ -43,14 +44,15 @@ using namespace std;
             cin >> quant;
             if (quant < 0){
                 cout << "Digite uma quantidade maior que zero (0)." << endl;
-            }while (quant < 0);
-        }do {
+            }
+        }while (quant < 0);
+        do {
             cout << "Preco Unitario (RS): ";
             cin >> price;
-            if (preco < 0.0){
-                cout << "Digite um preco valido."
+            if (price < 0.0){
+                cout << "Digite um preco valido." << endl;
             }
-        }while (preco < 0.0);
+        }while (price < 0.0);
 
         Produto *novo = estoque + (*qtd);
         (*novo).codigo = cod;
@@ -87,9 +89,9 @@ using namespace std;
         indice = buscarPorCodigo(estoque, qtd, cod);
         if (indice == -1){
             cout << "Produto com codigo nao encontrado" << endl;
-            reutrn;
+            return;;
         }
-        *p = estoque + indice;
+        p = (estoque + indice);
         cout << fixed << setprecision(2);
         cout  << "\n--- Dados do Produto ---" << endl;
         cout << "Codigo: " << (*p).codigo << endl;
@@ -106,7 +108,7 @@ using namespace std;
         cout << "Informe o codigo do produto: ";
         cin >> cod;
 
-        int indice = buscarPorCodigo(estoque, qtd, codigo);
+        int indice = buscarPorCodigo(estoque, qtd, cod);
         if (indice == -1) {
             cout << "\n Produtp com codigo " << cod << " nao encontrado." << endl;
             return;
@@ -121,10 +123,11 @@ using namespace std;
             cin >> novaQtd;
             if (novaQtd < 0){
                 cout << "A QUANTIDADE NAO PODE SER NEGATIVA!" << endl;
-            }while (novaQtd < 0);
-            (*p).quantidade = novaQtd;
+            }
+        }while (novaQtd < 0);
+           (*p).quantidade = novaQtd;
             cout << "\nQuantidade Atualizada para " << (*p).quantidade << "unidades." << endl;
-        }
+    }
     void excluirProduto (Produto *estoque, int *qtd){
         Produto *p;
         Produto *ultimo;
@@ -152,7 +155,7 @@ using namespace std;
         float total = 0.0;
         for (int i = 0; i < qtd; i++){
             const Produto *p = estoque + i;
-            total += (*p)quantidade * (*(p).preco);
+            total = total + ((*p).quantidade * ((*p).preco));
         }
         return total;
     }
