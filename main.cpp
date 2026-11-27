@@ -5,6 +5,7 @@
 #include "produto.h"
 #include "estoque.h"
 using namespace std;
+using namespace Estoque;
 void exibirMenu() {
     cout << "\n========================================" << endl;
     cout << "   GERENCIAMENTO DE ESTOQUE" << endl;
@@ -13,7 +14,7 @@ void exibirMenu() {
     cout << "2 - Listar produtos" << endl;
     cout << "3 - Consultar produto pelo codigo" << endl;
     cout << "4 - Atualizar quantidade em estoque" << endl;
-    cout << "5 - Excluir produto\n";
+    cout << "5 - Excluir produto" << endl;
     cout << "6 - Calcular valor total do estoque" << endl;
     cout << "0 - Encerrar aplicacao" << endl;
     cout << "========================================" << endl;

@@ -3,6 +3,7 @@
 #include <cstring>
 #include "produto.h"
 using namespace std;
+namespace Estoque{
 
     int buscarPorCodigo(const Produto *estoque, int n, int cod){
         for (int i = 0; i < n; i++){
@@ -159,4 +160,5 @@ using namespace std;
         }
         return total;
     }
+}
 #endif
